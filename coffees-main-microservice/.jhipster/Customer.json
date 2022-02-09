@@ -1,0 +1,29 @@
+{
+  "changelogDate": "20220209062852",
+  "clientRootFolder": "coffeesystem",
+  "databaseType": "sql",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "customerName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "35",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "customerPhone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "10",
+      "fieldValidateRulesMinlength": "10"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "coffeesystem",
+  "name": "Customer",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
