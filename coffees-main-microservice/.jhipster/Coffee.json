@@ -1,0 +1,43 @@
+{
+  "changelogDate": "20220209062526",
+  "clientRootFolder": "coffeesystem",
+  "databaseType": "sql",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "coffeeName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "coffeeType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": 20,
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "coffeeSize",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": 20,
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "coffeePrice",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "10",
+      "fieldValidateRulesMinlength": "1"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "coffeesystem",
+  "name": "Coffee",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
