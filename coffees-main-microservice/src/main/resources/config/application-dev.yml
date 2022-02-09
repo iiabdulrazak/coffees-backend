@@ -60,10 +60,6 @@ spring:
 server:
   port: 81
 
-# ===================================================================
-# JHipster specific properties
-# ===================================================================
-
 jhipster:
   cache: # Cache configuration
     hazelcast: # Hazelcast distributed cache
@@ -71,15 +67,7 @@ jhipster:
       backup-count: 1
   registry:
     password: admin
-  # CORS is disabled by default on microservices, as you should access them through a gateway.
-  # If you want to enable it, please uncomment the configuration below.
-  # cors:
-  #   allowed-origins: "http://localhost:9000,https://localhost:9000"
-  #   allowed-methods: "*"
-  #   allowed-headers: "*"
-  #   exposed-headers: "Authorization,Link,X-Total-Count"
-  #   allow-credentials: true
-  #   max-age: 1800
+
   security:
     authentication:
       jwt:
@@ -95,10 +83,3 @@ jhipster:
       host: localhost
       port: 5000
       queue-size: 512
-# ===================================================================
-# Application specific properties
-# Add your own application properties here, see the ApplicationProperties class
-# to have type-safe configuration, like in the JHipsterProperties above
-# ===================================================================
-
-# application:
