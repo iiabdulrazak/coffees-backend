@@ -39,6 +39,9 @@ public class Coffee implements Serializable {
     @Column(name = "coffee_price", length = 10, nullable = false)
     private String coffeePrice;
 
+    @ManyToOne
+    private Customer customer;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -104,6 +107,19 @@ public class Coffee implements Serializable {
 
     public void setCoffeePrice(String coffeePrice) {
         this.coffeePrice = coffeePrice;
+    }
+
+    public Customer getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Coffee customer(Customer customer) {
+        this.setCustomer(customer);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
