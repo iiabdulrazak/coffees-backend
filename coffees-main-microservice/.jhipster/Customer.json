@@ -24,6 +24,13 @@
   "name": "Customer",
   "pagination": "pagination",
   "readOnly": false,
-  "relationships": [],
+  "relationships": [
+    {
+      "otherEntityName": "coffee",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "coffee",
+      "relationshipType": "one-to-many"
+    }
+  ],
   "service": "serviceClass"
 }

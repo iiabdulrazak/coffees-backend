@@ -1,6 +1,9 @@
 package com.coffees.coffeesystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -28,6 +31,10 @@ public class Customer implements Serializable {
     @Size(min = 10, max = 10)
     @Column(name = "customer_phone", length = 10, nullable = false, unique = true)
     private String customerPhone;
+
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties(value = { "customer" }, allowSetters = true)
+    private Set<Coffee> coffees = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -68,6 +75,37 @@ public class Customer implements Serializable {
 
     public void setCustomerPhone(String customerPhone) {
         this.customerPhone = customerPhone;
+    }
+
+    public Set<Coffee> getCoffees() {
+        return this.coffees;
+    }
+
+    public void setCoffees(Set<Coffee> coffees) {
+        if (this.coffees != null) {
+            this.coffees.forEach(i -> i.setCustomer(null));
+        }
+        if (coffees != null) {
+            coffees.forEach(i -> i.setCustomer(this));
+        }
+        this.coffees = coffees;
+    }
+
+    public Customer coffees(Set<Coffee> coffees) {
+        this.setCoffees(coffees);
+        return this;
+    }
+
+    public Customer addCoffee(Coffee coffee) {
+        this.coffees.add(coffee);
+        coffee.setCustomer(this);
+        return this;
+    }
+
+    public Customer removeCoffee(Coffee coffee) {
+        this.coffees.remove(coffee);
+        coffee.setCustomer(null);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

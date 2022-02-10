@@ -1,5 +1,6 @@
 package com.coffees.coffeesystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -40,6 +41,7 @@ public class Coffee implements Serializable {
     private String coffeePrice;
 
     @ManyToOne
+    @JsonIgnoreProperties(value = { "coffees" }, allowSetters = true)
     private Customer customer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
